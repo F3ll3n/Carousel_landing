@@ -5,27 +5,40 @@ let carouselLine = document.querySelector('.carousel-line');
 let carouselItems = document.querySelectorAll('.carousel-item');
 let carouselItemWidth = document.querySelector('.carousel-item').offsetWidth;
 let count = 0;
-let viewItems = 4;
-
+//После загрузки сюда добавляется значение 
+let viewItems;
+function checkWinWidth(){
+    width = window.innerWidth;
+    console.log(width);
+    //Это функция которая возвращает значение функции выше, работающей от изменения экрана
+    //Работает она как медиа запрос и определяет ширину текущего блока, чтобы рассчитать количество возможных шагов в стороны.
+    function checkMediaQuery(winWidth) {
+        let viewItem;
+                if (winWidth > 1268 && winWidth < 10000) {
+                    window.onresize = viewItem = 4;
+                }
+                if (winWidth > 968 && winWidth < 1268) {
+                    window.onresize = viewItem = 3;
+                  }
+                if (winWidth > 668 &&  winWidth < 968) {
+                    window.onresize = viewItem = 2;
+                  }
+                if (winWidth > 368 &&  winWidth < 668) {
+                    window.onresize = viewItem = 1;
+                } 
+             
+              return viewItem;
+      }
+      viewItems = checkMediaQuery(width);
+      console.log('Ширина блоков: ' + viewItems);
+      count = 0;
+      rollCarousel();
+      return viewItems;
+}
+let winWidth = checkWinWidth();
+console.log(winWidth);
+window.addEventListener('resize', checkWinWidth);
 //Слайдер медиа (срабатывают только после обновления страницы :) )
-function checkMediaQuery() {
-    let viewItem;
-    if (window.innerWidth > 1268) {
-        viewItem = 4;
-    }
-    else if (window.innerWidth > 968) {
-        viewItem = 3;
-      }
-      else if (window.innerWidth > 668) {
-        viewItem = 2;
-      }
-      else if (window.innerWidth > 368) {
-        viewItem = 1;
-      }
-      return viewItem;
-  }
-window.addEventListener('resize', checkMediaQuery);
-viewItems = checkMediaQuery();
 
 //Кнопка вправо + счётчик с запуском функции смены положении линии
 buttonRight.addEventListener('click', function right(){
