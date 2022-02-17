@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'icons';
+  src:
+    url('../fonts/icons.ttf?wm574h') format('truetype'),
+    url('../fonts/icons.woff?wm574h') format('woff'),
+    url('../fonts/icons.svg?wm574h#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-callBack:before {
+  content: "\e90b";
+}
+.icon-parameters:before {
+  content: "\e90c";
+}
+.icon-fill:before {
+  content: "\e900";
+  padding: 0 5px 0 0;
+}
+.icon-inst:before {
+  content: "\e901";
+  color: #36ba5f;
+  font-size: 22px;
+}
+.icon-vk:before {
+  content: "\e902";
+  color: #36ba5f;
+  font-size: 25px;
+}
+.icon-mail:before {
+  content: "\e903";
+  padding: 0 5px 0 0;
+}
+.icon-message:before {
+  content: "\e904";
+  padding: 0 5px 0 0;
+}
+.icon-call:before {
+  content: "\e905";
+  padding: 0 5px 0 0;
+}
+.icon-arrow:before {
+  content: "\e906";
+  padding-left: 2px;
+}
+.icon-star:before {
+  content: "\e907";
+  color: #36ba5f;
+  font-size: 29px;
+}
+.icon-tikTok:before {
+  content: "\e908";
+  color: #36ba5f;
+  font-size: 23px;
+}
+.icon-twitter:before {
+  content: "\e909";
+  color: #36ba5f;
+  font-size: 24px;
+}
+.icon-facebook:before {
+  content: "\e90a";
+  color: #36ba5f;
+  font-size: 24px;
+}
